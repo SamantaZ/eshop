@@ -1,5 +1,5 @@
 <?php 
-session_start();
+ob_start();
 require "Controller/ProductsController.php"; ?>
 <html>
 <head>
