@@ -35,7 +35,7 @@ if (isset($_POST['product'])) {
 						<small class=" mb-5" id="nameError"></small>
 					</div>
 					<div class="mb-5">
-						<h4 class="mb-3">Price</h4>
+						<h4 class="mb-3">Price ($)</h4>
 						<input class="form-control" type="number" step="any" placeholder="Write price here..." id="price" name="product[price]" required>
 						<small class=" mb-5" id="priceError"></small>
 					</div>
