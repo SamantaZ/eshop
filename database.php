@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST', "localhost");
-define('DB_NAME', "productsDB");
-define('DB_USER', "scandi");
+define('DB_NAME', "id19974923_productsdb");
+define('DB_USER', "id19974923_scandi");
 define('DB_PASS', "UZ@lpU2u6V@6UaKN");
 class Database
 {
