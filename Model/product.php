@@ -2,11 +2,6 @@
 require "model.php";
 class Product extends Model
 {
-    public $sku;
-    public $name;
-    public $price;
-    public $type_id;
-
     public $table = 'products';
     public $modelName = 'Product';
     public $singularName = 'product';
@@ -23,8 +18,6 @@ class Product extends Model
 
 class ProductType extends Model
 {
-    public $name;
-
     public $table = 'product_types';
     public $modelName = 'ProductType';
     public $singularName = 'producttype';
@@ -34,9 +27,6 @@ class ProductType extends Model
 
 class Dvd extends Product
 {
-    public $size;
-    public $product_id;
-
     public $table = 'dvd_attributes';
     public $modelName = 'Dvd';
     public $singularName = 'dvd';
@@ -47,8 +37,6 @@ class Dvd extends Product
 
 class Book extends Product
 {
-    public $weight;
-    public $product_id;
     public $table = 'book_attributes';
     public $modelName = 'Book';
     public $singularName = 'book';
@@ -59,10 +47,6 @@ class Book extends Product
 
 class Furniture extends Product
 {
-    public $height;
-    public $length;
-    public $width;
-    public $product_id;
     public $table = 'furniture_attributes';
     public $modelName = 'Furniture';
     public $singularName = 'furniture';
