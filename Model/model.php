@@ -11,6 +11,8 @@ class Model
     public $hasMany = array();
     public $belongsTo = array();
 
+    public $db = NULL;
+
     public function getTable()
     {
         return $this->table;

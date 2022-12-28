@@ -5,12 +5,13 @@ define('DB_USER', "id19974923_scandi");
 define('DB_PASS', "UZ@lpU2u6V@6UaKN");
 class Database
 {
+    public $connection = NULL;
     public function __construct()
     {
         try {
             $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
             $this->connection = new PDO($dsn, DB_USER, DB_PASS);
-            return  $this->connection;
+            $connection =  $this->connection;
         } catch (Exception $e) {
             die($e->getMessage());
         }

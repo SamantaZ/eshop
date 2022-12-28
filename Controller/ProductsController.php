@@ -6,8 +6,8 @@ class ProductsController
     {
         try {
 
-            $this->Product = new Product();
-            $data = $this->Product->get();
+            $product = new Product();
+            $data = $product->get();
             return $data;
         } catch (Error $e) {
             echo  $e->getMessage();
@@ -17,8 +17,8 @@ class ProductsController
     public function delete($data)
     {
         try {
-            $this->Product = new Product();
-            $data = $this->Product->delete($data);
+            $product = new Product();
+            $data = $product->delete($data);
             header("Location:index.php");
         } catch (Error $e) {
             echo  $e->getMessage();
@@ -28,8 +28,8 @@ class ProductsController
     public function add($product)
     {
         try {
-            $this->Product = new Product();
-            $data = $this->Product->add($product);
+            $product = new Product();
+            $product->add($product);
             header("Location:index.php");
         } catch (Error $e) {
             echo  $e->getMessage();
@@ -39,9 +39,19 @@ class ProductsController
     public function getProductTypes()
     {
         try {
-            $this->ProductType = new ProductType();
-            $data = $this->ProductType->get();
+            $productType = new ProductType();
+            $data = $productType->get();
             return $data;
+        } catch (Error $e) {
+            echo  $e->getMessage();
+        }
+    }
+
+    public function fetchAttributes($className)
+    {
+        try {
+            $model = new $className();
+            return  $model->displayAttributes();
         } catch (Error $e) {
             echo  $e->getMessage();
         }

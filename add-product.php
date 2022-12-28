@@ -78,6 +78,7 @@ if (isset($_POST['product'])) {
 				var typeName = $('#productType').find(':selected').text();
 				$.ajax({
 					type: "POST",
+					url: '<?php echo __DIR__ ;?>/Controller/ProductsController.php/fetchAttributes',
 					url: 'fetch-attributes.php',
 					data: {
 						productType: {
@@ -86,6 +87,7 @@ if (isset($_POST['product'])) {
 						}
 					},
 					success: function(response) {
+						console.log(response);
 						$("#displayAttributes").html(response);
 						$('#attributes').removeClass('d-none');
 						$('#attributes').addClass('d-block');
@@ -100,7 +102,6 @@ if (isset($_POST['product'])) {
 		const nameElement = document.querySelector('#name');
 		const priceElement = document.querySelector('#price');
 		const productTypeElement = document.querySelector('#productType');
-
 
 		const form = document.querySelector('#product_form');
 		const isRequired = value => value === '' ? false : true;
