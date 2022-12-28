@@ -1,17 +1,17 @@
 <?php
+
 require __DIR__ . "/../database.php";
 class Model
 {
-
     public $table = false;
-    public $modelName = NULL;
-    public $singularName = NULL;
+    public $modelName = null;
+    public $singularName = null;
     protected $_schema = array();
     protected $_attributes = array();
     public $hasMany = array();
     public $belongsTo = array();
 
-    public $db = NULL;
+    public $db = null;
 
     public function getTable()
     {
@@ -46,7 +46,7 @@ class Model
         return $this->_attributes;
     }
 
-    function get($whereConditions = NULL)
+    public function get($whereConditions = null)
     {
         $this->db = new Database();
         $schema = $this->getSchema();
@@ -55,7 +55,7 @@ class Model
         $columns = '';
         $from = '';
         $join = '';
-        $where = !empty($whereConditions) ? ' WHERE ' . $whereConditions : NULL;
+        $where = !empty($whereConditions) ? ' WHERE ' . $whereConditions : null;
 
         foreach ($schema as $column) {
             if (next($schema)) {
@@ -116,7 +116,7 @@ class Model
         return $result;
     }
 
-    function addSingle($data)
+    public function addSingle($data)
     {
         $this->db = new Database();
         $newData = array();
@@ -136,9 +136,9 @@ class Model
         return $result;
     }
 
-    function add($data)
+    public function add($data)
     {
-        $whereConditions = NULL;
+        $whereConditions = null;
 
         if (!empty($data)) {
             $recordId = $this->addSingle($data);
@@ -167,7 +167,7 @@ class Model
         }
     }
 
-    function delete($data)
+    public function delete($data)
     {
         $this->db = new Database();
         if (is_array($data)) {
@@ -179,7 +179,7 @@ class Model
         return true;
     }
 
-    function displayAttributes()
+    public function displayAttributes()
     {
         foreach ($this->_attributes as $attribute => $property) {
             echo '<div class="col-12 col-xl-12">
