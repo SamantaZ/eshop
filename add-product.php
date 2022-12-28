@@ -78,8 +78,8 @@ if (isset($_POST['product'])) {
 				var typeName = $('#productType').find(':selected').text();
 				$.ajax({
 					type: "POST",
-					url: '<?php echo __DIR__ ;?>/Controller/ProductsController.php/fetchAttributes',
-					url: 'fetch-attributes.php',
+					url: '/Controller/ProductsController.php/fetchAttributes',
+					//url: 'fetch-attributes.php',
 					data: {
 						productType: {
 							id: id,
