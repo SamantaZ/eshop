@@ -1,16 +1,16 @@
 <?php
+
 require "Model/product.php";
 class ProductsController
 {
     public function get()
     {
         try {
-
             $product = new Product();
             $data = $product->get();
             return $data;
         } catch (Error $e) {
-            echo  $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -21,7 +21,7 @@ class ProductsController
             $data = $product->delete($data);
             header("Location:index.php");
         } catch (Error $e) {
-            echo  $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -32,7 +32,7 @@ class ProductsController
             $product->add($product);
             header("Location:index.php");
         } catch (Error $e) {
-            echo  $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -43,7 +43,7 @@ class ProductsController
             $data = $productType->get();
             return $data;
         } catch (Error $e) {
-            echo  $e->getMessage();
+            echo $e->getMessage();
         }
     }
 
@@ -51,9 +51,9 @@ class ProductsController
     {
         try {
             $model = new $className();
-            return  $model->displayAttributes();
+            return $model->displayAttributes();
         } catch (Error $e) {
-            echo  $e->getMessage();
+            echo $e->getMessage();
         }
     }
 }
